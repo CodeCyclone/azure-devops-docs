@@ -109,7 +109,7 @@ $env:PATVAR = "YOUR_PAT_GOES_HERE"
 The following commands will convert your personal access token to baser64 encoded string and construct the HTTP request header.
 
 ```PowerShell
-$token = [Convert]::ToBase64String(([Text.Encoding]::ASCII.GetBytes("username:$PatVar")))
+$token = [Convert]::ToBase64String(([Text.Encoding]::ASCII.GetBytes("username:$env:PATVAR")))
 $headers = @{
     Authorization = "Basic $token"
 }
